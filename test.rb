@@ -24,7 +24,6 @@ end
 
 ##
 # THE ACTUAL TESTS
-
 if ARGV.empty?
   # Run the default tests
   test "vh1 classic"
@@ -32,7 +31,7 @@ if ARGV.empty?
   test "hbo"
   test "fake channel"
 else
-  # Test the domain passed
+  # Test the channel passed as an argument
   test ARGV.first
 end
 #
