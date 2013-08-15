@@ -13,7 +13,8 @@ class WhatsOn < Sinatra::Application
   end
 
   get '/:q' do
-    @result = Finder.new(CGI.unescape params[:q]).result
+    @query = CGI.unescape params[:q]
+    @result = Finder.new(@query).result
     erb :result
   end
 end
