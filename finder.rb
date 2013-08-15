@@ -37,3 +37,39 @@ class Finder
     @doc ||= Nokogiri::HTML(open(LISTINGS).read)
   end
 end
+
+class MtvJamsFinder
+  def initialize(term)
+    @term = term
+  end
+
+  def result
+    doc.at('.onNow .pickable').text
+  end
+
+  private
+
+  def doc
+    @doc ||= Nokogiri::HTML(open('http://www.locatetv.com/listings/mtv-jams').read)
+  end
+end
+
+class WhatsOnFinder
+  def initialize(term)
+    @term = term
+  end
+
+  def result
+    finder.result
+  end
+
+  private
+
+  def finder
+    if @term =~ /mtv\s*jams/i
+      MtvJamsFinder.new(@term)
+    else
+      Finder.new(@term)
+    end
+  end
+end
