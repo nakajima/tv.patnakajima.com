@@ -1,7 +1,9 @@
 require 'rubygems'
 require 'sinatra'
 require 'cgi'
-require './finder'
+require './lib/finder'
+require './lib/finders/generic'
+require './lib/finders/mtv_jams'
 
 class WhatsOn < Sinatra::Application
   get '/' do
