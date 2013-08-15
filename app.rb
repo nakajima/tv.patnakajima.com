@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'sinatra'
+require 'cgi'
 require './finder'
 
 class WhatsOn < Sinatra::Application
@@ -12,7 +13,7 @@ class WhatsOn < Sinatra::Application
   end
 
   get '/:q' do
-    @result = Finder.new(params[:q]).result
+    @result = Finder.new(CGI.escape params[:q]).result
     erb :result
   end
 end
