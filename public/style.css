@@ -1,0 +1,22 @@
+body {
+  font-size: 48px;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #555;
+  text-align: center;
+}
+
+h1 span {
+  color: #000;
+}
+
+h1.result {
+  background: #0af;
+  color: #fff;
+  padding: 20px;
+  display: inline-block;
+  margin-top: 0.1em;
+}
+
+form input[type=text] {
+  font-size: 24px;
+}
