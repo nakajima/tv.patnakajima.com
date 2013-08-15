@@ -9,11 +9,11 @@ class WhatsOn < Sinatra::Application
   end
 
   get '/search' do
-    redirect "/#{params[:q]}"
+    redirect "/#{CGI.escape params[:q]}"
   end
 
   get '/:q' do
-    @result = Finder.new(CGI.escape params[:q]).result
+    @result = Finder.new(CGI.unescape params[:q]).result
     erb :result
   end
 end
