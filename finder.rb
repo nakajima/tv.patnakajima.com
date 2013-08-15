@@ -14,6 +14,7 @@ class Mapper
   def result
     return 'VH1 Clsc' if @term =~ /vh1\s*classic/i
     return 'MTV 2'    if @term =~ /mtv\s*2/i
+    return 'Comedy'   if @term =~ /comedy\s*(central)?/i
     @term
   end
 end

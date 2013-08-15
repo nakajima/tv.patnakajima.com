@@ -21,3 +21,8 @@ form input[type=text] {
   display: inline-block;
   font-size: 48px;
 }
+
+a.email {
+  color: #0af;
+  text-decoration: none;
+}
